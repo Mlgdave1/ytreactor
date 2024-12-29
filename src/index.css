@@ -1,0 +1,92 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+body {
+  @apply bg-[#0f0f0f] text-white;
+}
+
+.template-element {
+  touch-action: none;
+  user-select: none;
+  transition: transform 0.2s;
+}
+
+.template-element:hover {
+  outline: 2px solid rgba(59, 130, 246, 0.5);
+  outline-offset: 2px;
+}
+
+.template-element.selected {
+  outline: 2px solid rgb(59, 130, 246);
+  outline-offset: 2px;
+}
+
+/* Auth UI Customization */
+.auth-container {
+  @apply space-y-4;
+}
+
+.auth-button {
+  @apply w-full px-4 py-2 text-white rounded-md transition-colors !important;
+}
+
+.auth-input {
+  @apply w-full px-4 py-2 bg-[#272727] border border-[#323232] rounded-md text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-red-500 !important;
+}
+
+.auth-loader {
+  @apply !border-red-500;
+}
+
+/* Debug Window */
+.debug-window {
+  @apply fixed bottom-4 right-4 w-96 bg-[#1a1a1a] rounded-lg shadow-xl border border-[#272727] max-h-96 overflow-hidden;
+}
+
+.debug-window pre {
+  @apply whitespace-pre-wrap break-all;
+}
+
+/* Resize Handle Styles */
+.react-resizable-handle {
+  @apply absolute w-4 h-4 bg-blue-500/20 border-2 border-blue-500/50 rounded-full;
+  background-repeat: no-repeat;
+  background-origin: content-box;
+  box-sizing: border-box;
+  opacity: 0;
+  transition: opacity 0.2s, background-color 0.2s;
+}
+
+.react-resizable:hover .react-resizable-handle {
+  opacity: 1;
+}
+
+.react-resizable-handle:hover {
+  @apply bg-blue-500/40;
+}
+
+.react-resizable-handle-se {
+  @apply bottom-0 right-0 cursor-se-resize;
+}
+
+.react-resizable-handle-sw {
+  @apply bottom-0 left-0 cursor-sw-resize;
+}
+
+.react-resizable-handle-nw {
+  @apply top-0 left-0 cursor-nw-resize;
+}
+
+.react-resizable-handle-ne {
+  @apply top-0 right-0 cursor-ne-resize;
+}
+
+/* Draggable Handle */
+.handle {
+  @apply cursor-move select-none;
+}
